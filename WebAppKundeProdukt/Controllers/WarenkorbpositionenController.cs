@@ -49,8 +49,8 @@ namespace WebAppKundeProdukt.Controllers
         // GET: Warenkorbpositionen/Create
         public IActionResult Create()
         {
-            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Id");
-            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Id");
+            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Nachname");
+            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Beschreibung");
             return View();
         }
 
@@ -67,8 +67,8 @@ namespace WebAppKundeProdukt.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Id", warenkorbposition.KundeId);
-            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Id", warenkorbposition.ProduktId);
+            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Nachname", warenkorbposition.KundeId);
+            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Beschreibung", warenkorbposition.ProduktId);
             return View(warenkorbposition);
         }
 
@@ -85,8 +85,8 @@ namespace WebAppKundeProdukt.Controllers
             {
                 return NotFound();
             }
-            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Id", warenkorbposition.KundeId);
-            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Id", warenkorbposition.ProduktId);
+            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Nachname", warenkorbposition.KundeId);
+            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Beschreibung", warenkorbposition.ProduktId);
             return View(warenkorbposition);
         }
 
@@ -122,8 +122,8 @@ namespace WebAppKundeProdukt.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Id", warenkorbposition.KundeId);
-            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Id", warenkorbposition.ProduktId);
+            ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Nachname", warenkorbposition.KundeId);
+            ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Beschreibung", warenkorbposition.ProduktId);
             return View(warenkorbposition);
         }
 

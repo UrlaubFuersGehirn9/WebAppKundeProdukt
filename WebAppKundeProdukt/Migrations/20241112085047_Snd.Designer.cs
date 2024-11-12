@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAppKundeProdukt.Data;
 
@@ -10,9 +11,11 @@ using WebAppKundeProdukt.Data;
 namespace WebAppKundeProdukt.Migrations
 {
     [DbContext(typeof(WebAppKundeProduktContext))]
-    partial class WebAppKundeProduktContextModelSnapshot : ModelSnapshot
+    [Migration("20241112085047_Snd")]
+    partial class Snd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,9 +31,6 @@ namespace WebAppKundeProdukt.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Endpreis")
-                        .HasColumnType("float");
 
                     b.Property<string>("Nachname")
                         .IsRequired()
@@ -75,9 +75,6 @@ namespace WebAppKundeProdukt.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Gesamtpreis")
-                        .HasColumnType("float");
 
                     b.Property<int>("KundeId")
                         .HasColumnType("int");

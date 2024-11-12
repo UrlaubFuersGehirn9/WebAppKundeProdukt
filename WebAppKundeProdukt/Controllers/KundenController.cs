@@ -34,12 +34,19 @@ namespace WebAppKundeProdukt.Controllers
             }
 
             var kunde = await _context.Kunde
+                .Include(r => r.Warenkorbpositionen)
+                .ThenInclude(p => p.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (kunde == null)
             {
                 return NotFound();
             }
-
+            foreach(Warenkorbposition w in kunde.Warenkorbpositionen)
+            {
+                w.Gesamtpreis = w.getGesamtpreis();
+                kunde.Endpreis += w.Gesamtpreis;
+            }
+            
             return View(kunde);
         }
 

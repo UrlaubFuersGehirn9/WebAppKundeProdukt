@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string Beschreibung { get; set; }
         public string? Kategorie {  get; set; }
+        public double Preis {  get; set; }
         public List<Warenkorbposition> Warenkorbpositionen { get; set; } = new List<Warenkorbposition>();
     }
 }

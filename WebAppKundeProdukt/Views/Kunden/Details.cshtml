@@ -24,6 +24,62 @@
         </dd>
     </dl>
 </div>
+<a asp-controller="Warenkorbpositionen" asp-action="Create">Create New Warenkorbposition</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Produkt
+            </th>
+            <th>
+                Menge
+            </th>
+            <th>
+                Einzepreis
+            </th>
+            <th>
+                Gesamtpreis
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Warenkorbpositionen)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Beschreibung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Menge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Preis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gesamtpreis)
+                </td>
+                <td>
+                    <a asp-controller="Warenkorbpositionen" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="Warenkorbpositionen" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Warenkorbpositionen" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <th>
+                Endpreis
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Endpreis)
+            </th>
+        </tr>
+    </tbody>
+</table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
