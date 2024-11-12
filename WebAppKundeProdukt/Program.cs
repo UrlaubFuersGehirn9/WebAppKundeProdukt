@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
 using WebAppKundeProdukt.Data;
 namespace WebAppKundeProdukt
 {
@@ -7,6 +8,7 @@ namespace WebAppKundeProdukt
     {
         public static void Main(string[] args)
         {
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-EN");
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<WebAppKundeProduktContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppKundeProduktContext") ?? throw new InvalidOperationException("Connection string 'WebAppKundeProduktContext' not found.")));

@@ -17,5 +17,6 @@ namespace WebAppKundeProdukt.Data
         public DbSet<WebAppKundeProdukt.Models.Kunde> Kunde { get; set; } = default!;
         public DbSet<WebAppKundeProdukt.Models.Produkt> Produkt { get; set; } = default!;
         public DbSet<WebAppKundeProdukt.Models.Warenkorbposition> Warenkorbposition { get; set; } = default!;
+        public DbSet<WebAppKundeProdukt.Models.Test> Test { get; set; } = default!;
     }
 }
