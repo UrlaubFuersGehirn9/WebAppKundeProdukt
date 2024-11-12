@@ -65,7 +65,7 @@ namespace WebAppKundeProdukt.Controllers
             {
                 _context.Add(warenkorbposition);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(KundenController.Index));
             }
             ViewData["KundeId"] = new SelectList(_context.Kunde, "Id", "Nachname", warenkorbposition.KundeId);
             ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Beschreibung", warenkorbposition.ProduktId);

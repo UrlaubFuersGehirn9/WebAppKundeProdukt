@@ -5,7 +5,7 @@
 namespace WebAppKundeProdukt.Migrations
 {
     /// <inheritdoc />
-    public partial class sixth : Migration
+    public partial class fifth : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -68,30 +68,6 @@ namespace WebAppKundeProdukt.Migrations
                     b.ToTable("Produkt");
                 });
 
-            modelBuilder.Entity("WebAppKundeProdukt.Models.Test", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Preis")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Test");
-                });
-
             modelBuilder.Entity("WebAppKundeProdukt.Models.Warenkorbposition", b =>
                 {
                     b.Property<int>("Id")

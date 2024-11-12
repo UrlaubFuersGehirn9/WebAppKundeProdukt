@@ -11,8 +11,8 @@ using WebAppKundeProdukt.Data;
 namespace WebAppKundeProdukt.Migrations
 {
     [DbContext(typeof(WebAppKundeProduktContext))]
-    [Migration("20241112102527_Fith")]
-    partial class Fith
+    [Migration("20241112142756_fifth")]
+    partial class fifth
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
