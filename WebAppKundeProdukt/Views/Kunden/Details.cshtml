@@ -31,13 +31,13 @@
             <th>
                 Produkt
             </th>
-            <th>
+            <th class="ta-r">
                 Menge
             </th>
-            <th>
+            <th class="ta-r">
                 Einzepreis
             </th>
-            <th>
+            <th class="ta-r">
                 Gesamtpreis
             </th>
             <th></th>
@@ -50,13 +50,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Produkt.Beschreibung)
                 </td>
-                <td>
+                <td class="ta-r">
                     @Html.DisplayFor(modelItem => item.Menge)
                 </td>
-                <td>
+                <td class="ta-r">
                     @Html.DisplayFor(modelItem => item.Produkt.Preis)
                 </td>
-                <td>
+                <td class="ta-r">
                     @Html.DisplayFor(modelItem => item.Gesamtpreis)
                 </td>
                 <td>
@@ -74,7 +74,7 @@
             </th>
             <th>
             </th>
-            <th>
+            <th class="ta-r">
                 @Html.DisplayFor(model => model.Endpreis)
             </th>
         </tr>

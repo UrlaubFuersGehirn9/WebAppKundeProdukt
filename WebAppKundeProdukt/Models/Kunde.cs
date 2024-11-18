@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace WebAppKundeProdukt.Models
 {
@@ -7,6 +9,8 @@ namespace WebAppKundeProdukt.Models
         public int Id { get; set; }
         public string Vorname { get; set; }
         public string Nachname { get; set; }
+        [NotMapped]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = true)]
         public double Endpreis { get; set; }
         public List<Warenkorbposition> Warenkorbpositionen { get; set; } = new List<Warenkorbposition>();
     }
